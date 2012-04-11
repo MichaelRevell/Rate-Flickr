@@ -18,7 +18,13 @@
           <li><a href="/best">Best</a></li>
         </ul>
         <ul class="nav pull-right">
-          <li><a href="/sign_in">Sing In</a></li>
+          <% if current_user %>
+             <li>Logged in as <%= current_user.email %>.</li>
+             <%= link_to "Log out", log_out_path %>
+           <% else %>
+             <li><%= link_to "Sign up", sign_up_path %></li>
+             <li><%= link_to "log in", log_in_path %></li>
+           <% end %>
         </ul>
       </div>
     </div>

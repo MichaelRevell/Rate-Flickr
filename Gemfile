@@ -40,3 +40,6 @@ group :test do
 end
 
 gem 'less-rails-bootstrap'
+
+gem "bcrypt-ruby", :require => "bcrypt"
+

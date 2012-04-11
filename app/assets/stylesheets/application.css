@@ -6,3 +6,9 @@
  *= require_self
  *= require_tree . 
 */
+
+.middle {
+	text-align: center;
+	padding: 30px;
+	margin: 10px;
+}

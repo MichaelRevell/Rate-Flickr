@@ -42,4 +42,4 @@ end
 gem 'less-rails-bootstrap'
 
 gem "bcrypt-ruby", :require => "bcrypt"
-
+gem "flickraw"

@@ -13,8 +13,7 @@ puts info.title           # => "PICT986"
 puts info.dates.taken     # => "2006-07-06 15:16:18"
 puts id
 
-sizes = flickr.photos.getSizes :photo_id => id
+info = flickr.photos.getInfo :photo_id => id
 
-original = sizes.find {|s| s.label == 'Original' }
-puts original.width       # => "800" -- may fail if they have no original marked image
+puts FlickRaw.url_b(info)
 

@@ -17,10 +17,7 @@ class HomeController < ApplicationController
     puts info.title           # => "PICT986"
     puts info.dates.taken     # => "2006-07-06 15:16:18"
     @imageId = id
-
-    info = flickr.photos.getInfo :photo_id => id
-
-    @cat = FlickRaw.url_m(info)
+    @pic = get_pic(id)
   end
 
   def about

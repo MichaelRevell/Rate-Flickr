@@ -14,6 +14,9 @@ class RatingsController < ApplicationController
   # GET /ratings/1.json
   def show
     @rating = Rating.find(params[:id])
+    
+    
+    @pic = get_pic(@rating.imageId)
 
     respond_to do |format|
       format.html # show.html.erb

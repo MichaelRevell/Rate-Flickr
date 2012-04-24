@@ -8,9 +8,10 @@
 
 <p>
   <b>Rating:</b>
-  <%= @rating.rating %>
+  <font size="+2" color="red"><%= @rating.rating %></font>
 </p>
 
+<h2><%= link_to 'Rate More Images!', root_path %></h2><br>
 
 <%= link_to 'Edit', edit_rating_path(@rating) %> |
 <%= link_to 'Back', ratings_path %>

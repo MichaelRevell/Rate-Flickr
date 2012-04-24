@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <td>image_id</td>
     <th>Imageid</th>
     <th>Rating</th>
     <th></th>
@@ -11,6 +12,7 @@
 
 <% @ratings.each do |rating| %>
   <tr>
+    <td><%= rating.image_id %></td>
     <td><%= rating.imageId %></td>
     <td><%= rating.rating %></td>
     <td><%= link_to 'Show', rating %></td>

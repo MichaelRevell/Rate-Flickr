@@ -4,26 +4,19 @@ class HomeController < ApplicationController
     
     @rating = Rating.new
 
-    FlickRaw.api_key="424ca2d344deb8f86a06ca73f26c9aa8"
-    FlickRaw.shared_secret="0bad88d39b4792c3"
-
-    list   = flickr.photos.search :tags => "cat"
+    @image = Image.random
+    @imageId = @image.imageId
+    @image_id = @image.id
+    @pic = get_pic(@image.imageId)
     
-    num = Random.rand(11)
-    id     = list[num].id
-    secret = list[num].secret
-    info = flickr.photos.getInfo :photo_id => id, :secret => secret
-
-    puts info.title           # => "PICT986"
-    puts info.dates.taken     # => "2006-07-06 15:16:18"
-    @imageId = id
-    @pic = get_pic(id)
   end
 
   def about
   end
 
   def best
+    #@best = Image.best
+    @best = Image.all.sort{|a,b| b.average_rating <=> a.average_rating}
   end
 
 end

@@ -44,14 +44,17 @@ class RatingsController < ApplicationController
   # POST /ratings.json
   def create
     @rating = Rating.new(params[:rating])
+    @image = Image.find(@rating.image_id)
+    @rating2 = @image.ratings.new(params[:rating])
+    @rating2.imageId = @image.imageId
 
     respond_to do |format|
-      if @rating.save
-        format.html { redirect_to @rating, notice: 'Rating was successfully created.' }
-        format.json { render json: @rating, status: :created, location: @rating }
+      if @rating2.save
+        format.html { redirect_to @rating2, notice: 'Rating was successfully created.' }
+        format.json { render json: @rating2, status: :created, location: @rating2 }
       else
         format.html { render action: "new" }
-        format.json { render json: @rating.errors, status: :unprocessable_entity }
+        format.json { render json: @rating2.errors, status: :unprocessable_entity }
       end
     end
   end

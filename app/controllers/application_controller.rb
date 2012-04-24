@@ -16,5 +16,6 @@ class ApplicationController < ActionController::Base
   end
   
   def average_rating(id)
+    
   end
 end

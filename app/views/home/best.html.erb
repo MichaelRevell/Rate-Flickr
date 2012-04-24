@@ -1,2 +1,13 @@
-<h1>Home#best</h1>
-<p>Find me in app/views/home/best.html.erb</p>
+<h1>The Best of the Images</h1>
+<p>
+  <center>
+  <table border="1" cellpadding="10"><tr><th>Picture</th><th>Average Rating</th><th>Number of Ratings</th></tr>
+<% for i in 0...@best.length %>
+  <tr>
+    <td><img src="<%= @best[i].pic %>"></td>
+    <td><%= @best[i].average_rating %></td>
+    <td><%= @best[i].ratings.length %></td>
+  </tr>
+<% end %>
+  <center>
+</p>

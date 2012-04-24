@@ -3,7 +3,7 @@ namespace :flicker do
       FlickRaw.api_key="424ca2d344deb8f86a06ca73f26c9aa8"
       FlickRaw.shared_secret="0bad88d39b4792c3"
 
-      list   = flickr.photos.search :tags => "cat"
+      list   = flickr.photos.search :tags => "kitten"
 
       for num in 0..20
         puts "-------- Image #{num} --------"
